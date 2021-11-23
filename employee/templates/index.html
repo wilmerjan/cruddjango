@@ -1,0 +1,46 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>  
+<body>  
+  <nav class="navbar navbar-light bg-dark mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex flex-row justify-content-center" href="#">
+        {% load static %}
+        <img src="{% static '/img/dracula.png' %}" alt="" width="40" height="40" class="mx-4">
+        <p class="mt-2 text-white">Wilmer's Employees</p>
+      </a>
+    </div>
+  </nav>
+  <div class="container d-flex justify-content-center shadow">
+    <form method="POST" class="d-flex flex-column py-5" action="/emp"> 
+      {% csrf_token %} 
+      <h2>CREATE EMPLOYEE RECORD</h2> 
+      <label class="mt-4">Employee ID</label>
+      {{ form.eid }}
+
+      <label class="mt-4">Employee Name</label>
+      {{ form.ename }}  
+
+      <label class="mt-4">Home Address</label>
+      {{ form.ehadd }}  
+
+      <label class="mt-4">Office Address</label>
+      {{ form.eoadd }}  
+
+      <label class="mt-4">Employee Email</label>
+      {{ form.eemail }} 
+
+      <label class="mt-4">Employee Contact</label>
+      {{ form.econtact }}  
+
+      <button type="submit" class="mt-4 btn btn-success">Submit</button>
+    </form>
+ 
+</body>  
+</html>  
